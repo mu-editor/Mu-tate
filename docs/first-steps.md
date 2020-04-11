@@ -38,9 +38,9 @@ issues that say some variation of, "when I click this button, it breaks". ;-)
 ## Coding
 
 The first thing to do is follow the instructions for
-[setting things up](setup.md).
+[setting things up](index.md) found at the homepage of this documentation.
 
-You should read the explanation of [architecture](architecture) to learn how Mu
+You should read the explanation of [architecture](architecture.md) to learn how Mu
 fits together. As of time of writing, Mu is a very small project. However, it's
 important to know where to find different aspects of Mu's functionality and
 understand why Mu was put together in the way that it has been.

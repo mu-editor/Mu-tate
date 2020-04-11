@@ -2,6 +2,10 @@
 
 ![Mu's logo](logo.png "Code with Mu!")
 
+This is an experimental version of [Mu](https://codewith.mu) made with
+Microsoft's [Monaco code editor](https://microsoft.github.io/monaco-editor/).
+Packaged via [Electron](https://www.electronjs.org/).
+
 
 ```eval_rst
 .. note::
@@ -15,6 +19,22 @@
     If you're interested in the fun, educational, inspiring and sometimes
     hilarious ways in which people use Mu, check out: https://madewith.mu/
 ```
+
+## Developer Setup
+
+You must have `node` and `npm` installed for your operating system. We use
+Python (3.6+) for scripting various aspects of the project, so this will also
+need to be installed.
+
+1. Make a Python virtualenv and install the Python requirements via pip:
+   `pip install -r requirements.txt`
+2. Use the `make` command to install the Electron dependencies: `make setup`
+3. Check everything works by running the test suite: `make test`
+4. Run the application locally with: `make run`
+
+Most other aspects of developing the project are scripted via the `make`
+command. Typing `make` on its own will give you a list of all available
+commands.
 
 ## What?
 
@@ -84,4 +104,10 @@ contributors to abide by the spirit of our
    contributing.md
    code_of_conduct.md
    first-steps.md
+   user-experience.md
+   architecture.md
+   translations.md
+   website.md
+   authors.md
+   copyright.md
 ```
