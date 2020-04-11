@@ -4,6 +4,8 @@ GREP_T_FLAG := $(shell test $$(uname) = Linux && echo -T)
 all:
 	@echo "make clean - reset the project and remove auto-generated assets."
 	@echo "make docs - run sphinx to create project documentation."
+	@echo "make run - run the application locally."
+	@echo "make setup - setup and install a development environment for Mu."
 	@echo "make test - run the jasmine based unit tests."
 
 clean:
@@ -22,5 +24,14 @@ docs: clean
 	@echo file://`pwd`/docs/_build/html/index.html
 	@echo "\n"
 
+run: clean
+	npm start --prefix ./mu
+
+setup: clean
+	command -v node >/dev/null 2>&1 || { echo >&2 "I require node but it's not installed. Aborting."; exit 1; }
+	command -v npm >/dev/null 2>&1 || { echo >&2 "I require npm but it's not installed. Aborting."; exit 1; }
+	npm install --prefix ./mu
+
 test: clean
 	jasmine ci --config tests/jasmine.yml
+	rm *.log

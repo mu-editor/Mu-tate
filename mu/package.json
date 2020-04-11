@@ -1,0 +1,22 @@
+{
+  "name": "Mu",
+  "version": "0.0.1",
+  "description": "A code editor for beginner Python programmers.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mu-editor/Mu-naco.git"
+  },
+  "author": "Nicholas H.Tollervey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mu-editor/Mu-naco/issues"
+  },
+  "homepage": "https://github.com/mu-editor/Mu-naco#readme",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^8.2.1"
+  }
+}
