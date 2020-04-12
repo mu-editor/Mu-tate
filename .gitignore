@@ -114,3 +114,9 @@ dist
 
 # Sphinx documentation
 docs/_build/
+
+# Python stand-alone versions for all supported platforms.
+python/linux64
+python/macos
+python/windows-amd64
+python/windows-x86

@@ -1,3 +1,7 @@
+black
+Click
 jasmine
 recommonmark
+requests
 sphinx
+zstandard
