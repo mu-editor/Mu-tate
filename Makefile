@@ -2,6 +2,7 @@ XARGS := xargs -0 $(shell test $$(uname) = Linux && echo -r)
 GREP_T_FLAG := $(shell test $$(uname) = Linux && echo -T)
 
 all:
+	@echo "\nThere is no default Makefile target right now. Try:\n"
 	@echo "make clean - reset the project and remove auto-generated assets."
 	@echo "make docs - run sphinx to create project documentation."
 	@echo "make run - run the application locally."
