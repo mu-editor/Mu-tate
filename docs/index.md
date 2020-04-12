@@ -110,4 +110,5 @@ contributors to abide by the spirit of our
    website.md
    authors.md
    copyright.md
+   license.md
 ```
