@@ -1,8 +1,7 @@
-# Mu-naco
+# Mu-tate
 
-An experimental version of [Mu](https://codewith.mu) made with Microsoft's
-[Monaco code editor](https://microsoft.github.io/monaco-editor/). Packaged via
-[Electron](https://www.electronjs.org/).
+An experimental version of [Mu](https://codewith.mu) made in JavaScript. 
+Packaged via [Electron](https://www.electronjs.org/).
 
 The application is in the `mu` directory. Embedded Python for each supported
 platform is in a directory indicating the platform, in the `python` directory.

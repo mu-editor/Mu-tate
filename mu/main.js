@@ -15,6 +15,7 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools()
+  win.setMenuBarVisibility(false)
 }
 
 // This method will be called when Electron has finished

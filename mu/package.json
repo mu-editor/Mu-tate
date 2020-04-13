@@ -5,21 +5,18 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mu-editor/Mu-naco.git"
+    "url": "git+https://github.com/mu-editor/Mu-tate.git"
   },
   "author": "Nicholas H.Tollervey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mu-editor/Mu-naco/issues"
+    "url": "https://github.com/mu-editor/Mu-tate/issues"
   },
-  "homepage": "https://github.com/mu-editor/Mu-naco#readme",
+  "homepage": "https://github.com/mu-editor/Mu-tate#readme",
   "scripts": {
     "start": "electron ."
   },
   "devDependencies": {
     "electron": "^8.2.1"
-  },
-  "dependencies": {
-    "monaco-editor": "^0.20.0"
   }
 }

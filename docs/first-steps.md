@@ -46,7 +46,7 @@ important to know where to find different aspects of Mu's functionality and
 understand why Mu was put together in the way that it has been.
 
 If you'd rather try something more substantial, why not explore the
-[list of currently open issues](https://github.com/mu-editor/Mu-naco/issues/),
+[list of currently open issues](https://github.com/mu-editor/Mu-tate/issues/),
 fix one of them and create a pull request for your solution?
 
 ## Translations
