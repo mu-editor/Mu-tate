@@ -3,6 +3,7 @@ GREP_T_FLAG := $(shell test $$(uname) = Linux && echo -T)
 
 all:
 	@echo "\nThere is no default Makefile target right now. Try:\n"
+	@echo "make ace - check for and download the latest version of Ace editor."
 	@echo "make clean - reset the project and remove auto-generated assets."
 	@echo "make docs - run sphinx to create project documentation."
 	@echo "make python - check for and download the latest stand-alone Python."
@@ -10,6 +11,9 @@ all:
 	@echo "make setup - setup and install a development environment for Mu."
 	@echo "make test - run the jasmine based unit tests."
 	@echo "make tidy - tidy project Python code with black."
+
+ace: clean
+	python3 utils/get_ace.py
 
 clean:
 	rm -rf docs/_build
