@@ -121,8 +121,8 @@ def run():
             to_download = get_zipfile(remote_tag)
             with tempfile.TemporaryDirectory() as tmpdir:
                 # Download the assets:
-                download_file(to_download, "/tmp/foobarbaz")
-                asset = os.path.join("/tmp/foobarbaz", "ace.zip")
+                download_file(to_download, tmpdir)
+                asset = os.path.join(tmpdir, "ace.zip")
                 unzip(asset)
             local_tag_info["ace"] = remote_tag
             with open(TAG_FILE, "w") as tf:
