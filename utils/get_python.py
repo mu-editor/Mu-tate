@@ -21,8 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOGFILE = os.path.join(BASE_DIR, "get_python.log")
 # Python directory.
 PYTHON_DIR = os.path.join(BASE_DIR, "python")
-# Python version tag file (keeps track of tags of latest release).
-TAG_FILE = os.path.join(PYTHON_DIR, "tag.json")
+# Version tag file (keeps track of tags of latest release).
+TAG_FILE = os.path.join(BASE_DIR, "versions.json")
 # Platforms for whom Mu packages a Python runtime.
 PLATFORMS = {
     "linux64",
@@ -144,12 +144,13 @@ def run():
     logger.info("Checking and updating Python assets.")
     click.echo("Starting...")
     # Check current local version with remote version.
+    local_tag_info = {}
     if os.path.exists(TAG_FILE):
         with open(TAG_FILE) as tf:
             local_tag_info = json.load(tf)
             logger.info(local_tag_info)
     else:
-        local_tag_info["tag"] = "0"
+        local_tag_info["python"] = "0"
     remote_tag = get_latest_tag()
     # Ensure the Python platform directories exist.
     force_download = False
@@ -163,24 +164,24 @@ def run():
                 # The directory is empty, so force a download of Python.
                 force_download = True
         if force_download:
-            local_tag_info["tag"] = "0"
-        if remote_tag > local_tag_info.get("tag", "0"):
+            local_tag_info["python"] = "0"
+        if remote_tag > local_tag_info.get("python", "0"):
             logger.info(f"Updating to {remote_tag}.")
             click.echo(f"Updating to {remote_tag}.")
             to_download = get_assets(remote_tag)
             with tempfile.TemporaryDirectory() as tmpdir:
                 # Download the assets:
                 for platform, url in to_download.items():
-                    download_file(url, platform, "/tmp/foobarbaz")
+                    download_file(url, platform, tmpdir)
                 # Decompress, unzip and copy each asset to the right location:
                 to_process = glob.glob(
-                    os.path.join("/tmp/foobarbaz", "*.tar.zst")
+                    os.path.join(tmpdir, "*.tar.zst")
                 )
                 for asset in to_process:
                     platform = os.path.basename(asset).split(".", 1)[0]
                     click.echo(f"Processing Python for {platform}.")
                     unzip(asset, platform)
-            local_tag_info["tag"] = remote_tag
+            local_tag_info["python"] = remote_tag
             with open(TAG_FILE, "w") as tf:
                 json.dump(local_tag_info, tf, indent=2)
             click.secho(
