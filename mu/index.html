@@ -7,7 +7,12 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body>
-    <div id="container" style="width:500px;height:300px;border:1px solid #ccc"></div>
+    <div id="container" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">def hello(name="World!"):
+    return f"Hello {name}"</div>
+    <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ace/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ace/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">require('./editor.js')</script>
   </body>
 </html>
 
