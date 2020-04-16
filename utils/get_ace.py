@@ -110,8 +110,8 @@ def run():
     else:
         local_tag_info["ace"] = "0"
     remote_tag = get_latest_tag()
-    # Ensure the Python platform directories exist.
-    force_download = False
+    # Ensure the Ace platform directories exist.
+    force_download = not os.path.exists(ACE_DIR)
     try:
         if force_download:
             local_tag_info["ace"] = "0"
