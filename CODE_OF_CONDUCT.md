@@ -1,7 +1,7 @@
 # Code of Conduct
 
 We expect contributors to follow the Code of Conduct reproduced below (based
-upon that of the Python Software Foundation).
+upon that of the [Python Software Foundation](https://python.org/psf)).
 
 The Python community is made up of members from around the globe with a diverse
 set of skills, personalities, and experiences. It is through these differences
