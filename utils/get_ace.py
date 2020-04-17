@@ -18,7 +18,7 @@ import zipfile
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The log file (for all the details).
 LOGFILE = os.path.join(BASE_DIR, "get_ace.log")
-# Python directory.
+# Ace directory in source tree.
 ACE_DIR = os.path.join(BASE_DIR, "mu", "js", "ace")
 # Version tag file (keeps track of tags of latest release).
 TAG_FILE = os.path.join(BASE_DIR, "versions.json")
@@ -35,7 +35,7 @@ logger.addHandler(logfile_handler)
 
 def get_latest_tag():
     """
-    Find the value of the latest tag for the stand-alone builds of Python.
+    Find the value of the latest tag for the Ace editor.
 
     :return: The most recent tag value for the project.
     """
@@ -99,7 +99,7 @@ def unzip(path):
 
 
 def run():
-    logger.info("Checking and updating Python assets.")
+    logger.info("Checking and updating Ace assets.")
     click.echo("Starting...")
     # Check current local version with remote version.
     local_tag_info = {}
