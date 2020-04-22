@@ -2,13 +2,95 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Mu</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="css/mu.css" />
   </head>
   <body>
-    <div id="container" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">def hello(name="World!"):
-    return f"Hello {name}"</div>
+    <nav id="menu">
+      <a href="#" id="button-modes" class="menu-item"
+        title="Change Mu's mode of behaviour">
+        <img src="images/modes.svg" class="menu-icon"/>
+        <span id="button-modes-label" class="menu-label">Modes</span>
+      </a>
+      <hr class="vertical" />
+      <div id="file-menu-items"> <!-- File related operations. -->
+        <a href="#" id="button-new" class="menu-item"
+          title="Create a new source code file.">
+          <img src="images/new.svg" class="menu-icon">
+          <span id="button-new-label" class="menu-label">New</span>
+        </a>
+        <a href="#" id="button-load" class="menu-item"
+          title="Load a source code file.">
+          <img src="images/load.svg" class="menu-icon">
+          <span id="button-load-label" class="menu-label">Load</span>
+        </a>
+        <a href="#" id="button-save" class="menu-item"
+          title="Save a source code file.">
+          <img src="images/save.svg" class="menu-icon">
+          <span id="button-save-label" class="menu-label">Save</span>
+        </a>
+      </div>
+      <hr class="vertical" />
+      <div id="mode-menu-items"></div>
+      <hr class="vertical" />
+      <div id="display-menu-items"> <!-- Display related operations. -->
+        <a href="#" id="button-zoom-in" class="menu-item"
+          title="Zoom in (to make the text bigger)">
+          <img src="images/zoom-in.svg" class="menu-icon">
+          <span id="button-zoom-in-label" class="menu-label">Zoom-in</span>
+        </a>
+        <a href="#" id="button-zoom-out" class="menu-item"
+          title="Zoom out (to make the text smaller).">
+          <img src="images/zoom-out.svg" class="menu-icon">
+          <span id="button-zoom-out-label" class="menu-label">Zoom-out</span>
+        </a>
+        <a href="#" id="button-theme" class="menu-item"
+          title="Toggle between the different available themes.">
+          <img src="images/theme_dark.svg" class="menu-icon">
+          <span id="button-theme-label" class="menu-label">Theme</span>
+        </a>
+      </div>
+      <hr class="vertical" />
+      <div id="help-menu-items"> <!-- Help related operations. -->
+        <a href="#" id="button-tidy" class="menu-item"
+          title="Tidy up the layout of your code.">
+          <img src="images/tidy.svg" class="menu-icon">
+          <span id="button-tidy-label" class="menu-label">Tidy</span>
+        </a>
+        <a href="#" id="button-check" class="menu-item"
+          title="Check your code for mistakes.">
+          <img src="images/check.svg" class="menu-icon">
+          <span id="button-check-label" class="menu-label">Check</span>
+        </a>
+        <a href="#" id="button-help" class="menu-item"
+          title="Show help about Mu in a browser.">
+          <img src="images/help.svg" class="menu-icon">
+          <span id="button-help-label" class="menu-label">Help</span>
+        </a>
+      </div>
+      <hr class="vertical" />
+      <a href="#" id="button-quit" class="menu-item"
+        title="Quit Mu.">
+        <img src="images/quit.svg" class="menu-icon"/>
+        <span id="button-quit-label" class="menu-label">Quit</span>
+      </a>
+    </nav>
+    <main>
+      <div id="container">def hello(name="World!"):
+      return f"Hello {name}"</div>
+    </main>
+    <footer>
+      <span id="messages"></span>
+      <div id="status">
+        <span id="mode"></span>
+        <a href="#" id="button-admin"
+          title="Configure Mu with the admin window.">
+          <img src="images/admin.svg"/>
+        </a>
+      </div>
+    </footer>
     <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/ace/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/ace/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
