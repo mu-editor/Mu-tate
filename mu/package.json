@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "electron": "^8.2.1"
+  },
+  "dependencies": {
+    "sass": "^1.26.3"
   }
 }
