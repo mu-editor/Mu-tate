@@ -17,6 +17,7 @@ $ make
 
 There is no default Makefile target right now. Try:
 
+make ace - check for and download the latest version of Ace editor.
 make clean - reset the project and remove auto-generated assets.
 make docs - run sphinx to create project documentation.
 make python - check for and download the latest stand-alone Python.
@@ -25,3 +26,17 @@ make setup - setup and install a development environment for Mu.
 make test - run the jasmine based unit tests.
 make tidy - tidy project Python code with black.
 ```
+
+## Developer Setup
+
+In a new Python 3 virtual environment on a machine with node and npm installed:
+
+```
+$ pip install -r requirements.txt
+$ make ace
+$ make python
+$ make setup
+```
+
+To run the tests `make test`, to run the application `make run`. Steps for
+packaging the application will be added very soon.
