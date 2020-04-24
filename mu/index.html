@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Mu</title>
+    <title>Mu 2.0</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" type="text/css" href="css/mu.css" />
@@ -33,7 +33,28 @@
         </a>
       </div>
       <hr class="vertical" />
-      <div id="mode-menu-items" class="menu-items"></div>
+      <div id="mode-menu-items" class="menu-items">
+        <a href="#" id="button-run" class="menu-item"
+          title="Run your Python code.">
+          <img src="images/run.svg" class="menu-icon">
+          <span id="button-run-label" class="menu-label">Run</span>
+        </a>
+        <a href="#" id="button-debug" class="menu-item"
+          title="Debug your Python code.">
+          <img src="images/debug.svg" class="menu-icon">
+          <span id="button-debug-label" class="menu-label">Debug</span>
+        </a>
+        <a href="#" id="button-repl" class="menu-item"
+          title="Use the Python REPL">
+          <img src="images/repl.svg" class="menu-icon">
+          <span id="button-repl-label" class="menu-label">REPL</span>
+        </a>
+        <a href="#" id="button-plotter" class="menu-item"
+          title="Display the plotter.">
+          <img src="images/plotter.svg" class="menu-icon">
+          <span id="button-plotter-label" class="menu-label">Plotter</span>
+        </a>
+      </div>
       <hr class="vertical" />
       <div id="display-menu-items" class="menu-items"> <!-- Display related operations. -->
         <a href="#" id="button-zoom-in" class="menu-item"
@@ -78,13 +99,30 @@
       </a>
     </nav>
     <main>
-      <div id="container">def hello(name="World!"):
-      return f"Hello {name}"</div>
+      <ul class="tabs">
+        <li class="tab">
+          <input type="radio" name="tabs" checked="checked" id="tab1" />
+          <label for="tab1">hello.py</label>
+          <div id="content1" class="content">
+              <div id="code-hello" class="code">def hello(name="world"):
+  return f"Hello, {name}."
+              </div>
+          </div>
+        </li>
+        <li class="tab">
+          <input type="radio" name="tabs" id="tab2" />
+          <label for="tab2">test.py</label>
+            <div id="content2" class="content">
+              <div id="code-test" class="code">print("This is a test...")
+              </div>
+            </div>
+        </li>
+      </ul>
     </main>
     <footer>
-      <span id="messages"></span>
+      <div id="messages">This is a message from the Mu editor itself.</div>
       <div id="status">
-        <span id="mode"></span>
+        <span id="mode">Python 3</span>
         <a href="#" id="button-admin"
           title="Configure Mu with the admin window.">
           <img src="images/admin.svg"/>
