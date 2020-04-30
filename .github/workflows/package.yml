@@ -20,7 +20,9 @@ jobs:
       run: cd mu && npm install
     - name: Build
       run: cd mu && npm run dist
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/upload-artifact@v1
       with:
         name: mu-tate-${{ matrix.os }}
-        path: dist/
+        path: mu/dist/
