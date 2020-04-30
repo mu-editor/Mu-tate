@@ -1,0 +1,42 @@
+.tabs {
+  display: block;
+
+  .tab {
+    float: left;
+    display: block;
+
+    & > input[type="radio"] {
+      display: none;
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    & > label {
+      display: inline-block;
+      padding: 6px 21px;
+      cursor: pointer;
+      color: #FFF;
+      background: rgb(35,35,35);
+    }
+
+    & > [id^="tab"]:checked + label {
+      background: #141414;
+      color: #F5F5F5;
+    }
+    & > [id^="tab"]:checked ~ [id^="content"] {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  .content {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    bottom: 32px;
+  }
+}

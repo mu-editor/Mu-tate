@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/mu-editor/Mu-tate#readme",
   "scripts": {
-    "start": "electron ."
+    "start": "sass scss/mu.scss css/mu.css --watch & electron ."
   },
   "devDependencies": {
     "electron": "^8.2.1"
