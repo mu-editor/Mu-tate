@@ -1,0 +1,26 @@
+name: Package
+
+on: [push, pull_request]
+
+jobs:
+  run-tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, macos-10.15, windows-2019]
+      fail-fast: false
+    name: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: Install
+      run: cd mu && npm install
+    - name: Build
+      run: cd mu && npm run dist
+    - uses: actions/upload-artifact@v1
+      with:
+        name: mu-tate-${{ matrix.os }}
+        path: dist/
