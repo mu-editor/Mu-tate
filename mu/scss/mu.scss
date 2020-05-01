@@ -1,0 +1,13 @@
+@import 'var';
+@import 'head';
+@import 'tabs';
+@import 'edit';
+@import 'foot';
+
+body {
+    font-size: 80%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
