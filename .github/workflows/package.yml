@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 12
     - name: Install
-      run: cd mu && npm install
+      run: cd mu && npm ci
     - name: Build
       run: cd mu && npm run dist
       env:

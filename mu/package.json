@@ -33,12 +33,14 @@
     "appId": "mu.codewith.app.mu-tate",
     "mac": {
       "category": "public.app-category.education",
+      "icon": "buildResources/icon.icns",
       "target": [
         "zip",
         "dmg"
       ]
     },
     "win": {
+      "icon": "buildResources/icon.ico",
       "target": [
         "nsis",
         "portable",
