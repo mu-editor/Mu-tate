@@ -2,7 +2,6 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  height: 64px;
   display: grid;
   grid-template-columns: repeat(minmax(0, 1fr));
 
@@ -20,28 +19,48 @@ nav {
 
   li {
     margin: 0;
-    padding: 0;
+    padding: 0 0 2px 0;
     display: inline-block;
     text-align: center;
     min-width: 64px;
   }
 
   a {
-    margin: 0;
+    display: block;
+    margin: 4px 0 0 0;
     text-align: center;
     color: inherit;
     text-decoration: none;
     min-width: 64px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      margin: 2px 0 0 12px;
+      width: 32px;
+      height: 32px;
+      border: 4px solid #ffc331;
+      border-radius: 100%;
+    }
+    &:hover svg {
+      fill: red;
+      transition: 0.3s ease;
+    }
   }
 
-  img {
-    max-height: 32px;
-    max-width: 32px;
-    min-height: 32px;
+  svg {
+    width: 26px;
+    height: 26px;
+    margin: 10px 10px 6px 10px;
     display: inline-block;
-    background: blue;
-    border: 4px solid yellow;
-    border-radius: 100%;
+    fill: #336994;
+    transition: 0.3s ease;
+  }
+
+  .menu-label {
+    display: block;
   }
 
   .menu-items {

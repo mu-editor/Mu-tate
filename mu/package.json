@@ -14,12 +14,13 @@
   },
   "homepage": "https://github.com/mu-editor/Mu-tate#readme",
   "scripts": {
-    "start": "sass scss/mu.scss css/mu.css --watch & electron ."
+    "start": "svg-sprite-generate -d icons -o img/sprite.svg & sass scss/mu.scss css/mu.css --watch & electron ."
   },
   "devDependencies": {
     "electron": "^8.2.1"
   },
   "dependencies": {
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "svg-sprite-generator": "0.0.7"
   }
 }
