@@ -7,20 +7,59 @@
     "type": "git",
     "url": "git+https://github.com/mu-editor/Mu-tate.git"
   },
-  "author": "Nicholas H.Tollervey",
+  "author": {
+    "name": "Nicholas H.Tollervey",
+    "email": "ntoll@ntoll.org"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mu-editor/Mu-tate/issues"
   },
   "homepage": "https://github.com/mu-editor/Mu-tate#readme",
   "scripts": {
-    "start": "svg-sprite-generate -d icons -o img/sprite.svg & sass scss/mu.scss css/mu.css --watch & electron ."
+    "start": "svg-sprite-generate -d icons -o img/sprite.svg & sass scss/mu.scss css/mu.css --watch & electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "devDependencies": {
-    "electron": "^8.2.1"
+    "electron": "^8.2.1",
+    "electron-builder": "^22.6.0"
   },
   "dependencies": {
     "sass": "^1.26.3",
     "svg-sprite-generator": "0.0.7"
+  },
+  "build": {
+    "appId": "mu.codewith.app.mu-tate",
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "buildResources/icon.icns",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "win": {
+      "icon": "buildResources/icon.ico",
+      "target": [
+        "nsis",
+        "portable",
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "zip"
+      ],
+      "category": "Education"
+    },
+    "appImage": {
+      "category": "Education"
+    },
+    "deb": {
+      "packageCategory": "Education"
+    }
   }
 }
