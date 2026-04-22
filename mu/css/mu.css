@@ -2,7 +2,6 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  height: 64px;
   display: grid;
   grid-template-columns: repeat(minmax(0, 1fr));
 }
@@ -18,26 +17,45 @@ nav ul + ul {
 }
 nav li {
   margin: 0;
-  padding: 0;
+  padding: 0 0 2px 0;
   display: inline-block;
   text-align: center;
   min-width: 64px;
 }
 nav a {
-  margin: 0;
+  display: block;
+  margin: 4px 0 0 0;
   text-align: center;
   color: inherit;
   text-decoration: none;
   min-width: 64px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-nav img {
-  max-height: 32px;
-  max-width: 32px;
-  min-height: 32px;
-  display: inline-block;
-  background: blue;
-  border: 4px solid yellow;
+nav a:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: 2px 0 0 12px;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #ffc331;
   border-radius: 100%;
+}
+nav a:hover svg {
+  fill: red;
+  transition: 0.3s ease;
+}
+nav svg {
+  width: 26px;
+  height: 26px;
+  margin: 10px 10px 6px 10px;
+  display: inline-block;
+  fill: #336994;
+  transition: 0.3s ease;
+}
+nav .menu-label {
+  display: block;
 }
 nav .menu-items {
   display: inline-flex;
@@ -83,7 +101,7 @@ nav .menu-items {
 
 main {
   position: absolute;
-  top: 64px;
+  top: 68px;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -109,10 +127,10 @@ footer {
   padding: 6px;
 }
 
-footer img {
+footer svg {
   height: 24px;
   top: 6px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 footer #messages {
@@ -120,6 +138,7 @@ footer #messages {
   bottom: 0px;
   left: 0px;
   margin: 6px;
+  line-height: 24px;
 }
 
 footer #status {
@@ -127,6 +146,7 @@ footer #status {
   bottom: 0px;
   right: 0px;
   margin: 6px;
+  line-height: 24px;
 }
 
 body {
